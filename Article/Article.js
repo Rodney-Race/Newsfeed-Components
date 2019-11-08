@@ -87,11 +87,25 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: "it's my own personal article",
-    date: "September 12th 2019",
-    firstParagraph: "first para",
-    secondParagraph: "second para",
-    thirdParagraph: "third para"
+    title: "New Article",
+    date: "November 7th 2019",
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+    mollit anim id est laborum.`,
+    secondParagraph: `Gravida neque convallis a cras. Egestas purus viverra accumsan in nisl nisi. Massa sed elementum tempus egestas sed sed. 
+    Eget aliquet nibh praesent tristique magna sit. Dignissim sodales ut eu sem integer vitae. Consectetur adipiscing elit pellentesque habitant morbi. 
+    Imperdiet sed euismod nisi porta. Ac turpis egestas maecenas pharetra convallis posuere. Et sollicitudin ac orci phasellus. Volutpat lacus laoreet 
+    non curabitur. In arcu cursus euismod quis viverra nibh cras pulvinar. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. 
+    Sed sed risus pretium quam vulputate dignissim. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Sed enim ut sem viverra. Eget 
+    est lorem ipsum dolor sit amet consectetur. Risus sed vulputate odio ut. Donec enim diam vulputate ut. Vel pharetra vel turpis nunc eget. Interdum 
+    velit euismod in pellentesque massa placerat duis ultricies.`,
+    thirdParagraph: `Massa sed elementum tempus egestas sed sed risus pretium. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur 
+    vitae. Gravida in fermentum et sollicitudin ac. Leo vel fringilla est ullamcorper. Ac tincidunt vitae semper quis lectus nulla at. Dolor morbi 
+    non arcu risus quis. In nisl nisi scelerisque eu ultrices vitae. Enim tortor at auctor urna nunc id cursus metus aliquam. Viverra mauris in 
+    aliquam sem fringilla ut morbi tincidunt. Neque ornare aenean euismod elementum nisi quis eleifend. Sed adipiscing diam donec adipiscing 
+    tristique risus nec feugiat. Convallis a cras semper auctor neque vitae tempus quam pellentesque. Quis vel eros donec ac odio tempor. Nunc 
+    vel risus commodo viverra.`
   }
 ];
 
