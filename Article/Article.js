@@ -85,6 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "New Article",
+    date: "November 7th 2019",
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+    mollit anim id est laborum.`,
+    secondParagraph: `Gravida neque convallis a cras. Egestas purus viverra accumsan in nisl nisi. Massa sed elementum tempus egestas sed sed. 
+    Eget aliquet nibh praesent tristique magna sit. Dignissim sodales ut eu sem integer vitae. Consectetur adipiscing elit pellentesque habitant morbi. 
+    Imperdiet sed euismod nisi porta. Ac turpis egestas maecenas pharetra convallis posuere. Et sollicitudin ac orci phasellus. Volutpat lacus laoreet 
+    non curabitur. In arcu cursus euismod quis viverra nibh cras pulvinar. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. 
+    Sed sed risus pretium quam vulputate dignissim. Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Sed enim ut sem viverra. Eget 
+    est lorem ipsum dolor sit amet consectetur. Risus sed vulputate odio ut. Donec enim diam vulputate ut. Vel pharetra vel turpis nunc eget. Interdum 
+    velit euismod in pellentesque massa placerat duis ultricies.`,
+    thirdParagraph: `Massa sed elementum tempus egestas sed sed risus pretium. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur 
+    vitae. Gravida in fermentum et sollicitudin ac. Leo vel fringilla est ullamcorper. Ac tincidunt vitae semper quis lectus nulla at. Dolor morbi 
+    non arcu risus quis. In nisl nisi scelerisque eu ultrices vitae. Enim tortor at auctor urna nunc id cursus metus aliquam. Viverra mauris in 
+    aliquam sem fringilla ut morbi tincidunt. Neque ornare aenean euismod elementum nisi quis eleifend. Sed adipiscing diam donec adipiscing 
+    tristique risus nec feugiat. Convallis a cras semper auctor neque vitae tempus quam pellentesque. Quis vel eros donec ac odio tempor. Nunc 
+    vel risus commodo viverra.`
   }
 ];
 
@@ -93,22 +114,86 @@ const data = [
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
-
     {three separate paragraph elements}
-
     <span class='expandButton'></span>
   </div>
-
   Hint: You will need to use createElement more than once here!
-
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
-
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+
+/* 
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+      {three separate paragraph elements}
+    <span class='expandButton'></span>
+  </div> */
+
+  function createArticle (articleInfo) {
+
+    // create elements 
+    const card = document.createElement('div');
+    const heading = document.createElement('h2');
+    const date  = document.createElement('p');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const spanButton = document.createElement('span');
+  
+    // append elements 
+    articles.appendChild(card);
+    card.appendChild(heading);
+    card.appendChild(date);
+    card.appendChild(p1);
+    card.appendChild(p2);
+    card.appendChild(p3);
+    card.appendChild(spanButton);
+  
+    // apply styles 
+  
+    card.classList.add('article');
+    date.classList.add('date');
+    spanButton.classList.add('expandButton');
+  
+    // apply content
+  
+    heading.textContent = articleInfo.title;
+    date.textContent = articleInfo.date;
+    p1.textContent = articleInfo.firstParagraph;
+    p2.textContent = articleInfo.secondParagraph;
+    p3.textContent = articleInfo.thirdParagraph;
+    spanButton.textContent = 'expand more';
+  
+  
+    /*
+    Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.  */
+  
+    spanButton.addEventListener('click', (e) => {
+      card.classList.toggle('article-open');
+    })
+  
+    
+    /*
+    Step 3: return the entire component.  */
+  
+    return card;
+  
+    }
+    /*
+    Step 4: Map over the data, creating a component for each oject and add each component to the DOM 
+    as children of the 'articles' div. */
+  
+    const articles = document.querySelector('.articles');
+    data.forEach( data => {
+      articles.appendChild(createArticle(data));
+    })
+  
+    /*
+    Step 5: Add a new article to the array. Make sure it is in the same format as the others.
+    Refresh the page to see the new article.*/
+  
